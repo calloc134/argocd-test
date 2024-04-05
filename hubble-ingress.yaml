@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hubble-ingress
+  namespace: ciliunm
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`hubble.example.local`)
+      kind: Rule
+      services:
+        - name: hubble-ui
+          port: 80

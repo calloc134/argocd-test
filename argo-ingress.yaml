@@ -1,0 +1,14 @@
+apiVersion:
+kind: IngressRoute
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`argocd.example.local`)
+      kind: Rule
+      services:
+        - name: argocd-server
+          port: 80
