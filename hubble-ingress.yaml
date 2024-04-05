@@ -5,7 +5,7 @@ metadata:
   namespace: cilium
 spec:
   rules:
-    - host: hubble.example.local
+    - host: hubble.localhost
       http:
         paths:
           - path: /
